@@ -4,9 +4,10 @@ flst = []
 wrtlst = []
 areahead = []
 retrieved = 0
+area = ''
 
 def prodfinder():
-    global prodlst, nflst, flst, wrtlst, areahead, retrieved
+    global prodlst, nflst, flst, wrtlst, areahead, retrieved, area
     fname = input('Enter File Name: ')
     fname = fname + '.txt'
     area = input('Enter Area: ')
@@ -75,9 +76,9 @@ def filewrite(attr):
     with open('results.txt', attr) as fh:
         for pc in nflst:
             if retrieved == 1:
-                fh.write(pc + ' not found \n')
+                fh.write(pc + ' not found in ' + area + '\n')
             else:
-                fh.write('\n' + pc + ' not found \n')
+                fh.write('\n' + pc + ' not found in ' + area + '\n')
         fh.writelines(areahead)
         fh.writelines(wrtlst)        
 
